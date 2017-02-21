@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.5
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchOtherPackageData laracasts/generators@dev-master
+20 silly cache add args [ 'laracasts/generators@dev-master', null ]
+21 verbose cache add spec laracasts/generators@dev-master
+22 silly cache add parsed spec Result {
+22 silly cache add   raw: 'laracasts/generators@dev-master',
+22 silly cache add   scope: null,
+22 silly cache add   escapedName: null,
+22 silly cache add   name: null,
+22 silly cache add   rawSpec: 'laracasts/generators@dev-master',
+22 silly cache add   spec: 'c:\\wamp\\www\\api-lessons\\laracasts\\generators@dev-master',
+22 silly cache add   type: 'local' }
+23 error addLocal Could not install c:\wamp\www\api-lessons\laracasts\generators@dev-master
+24 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open 'c:\wamp\www\api-lessons\laracasts\generators@dev-master'
+24 silly fetchPackageMetaData     at Error (native)
+24 silly fetchPackageMetaData  error for laracasts/generators@dev-master { Error: ENOENT: no such file or directory, open 'c:\wamp\www\api-lessons\laracasts\generators@dev-master'
+24 silly fetchPackageMetaData     at Error (native)
+24 silly fetchPackageMetaData   errno: -4058,
+24 silly fetchPackageMetaData   code: 'ENOENT',
+24 silly fetchPackageMetaData   syscall: 'open',
+24 silly fetchPackageMetaData   path: 'c:\\wamp\\www\\api-lessons\\laracasts\\generators@dev-master' }
+25 silly rollbackFailedOptional Starting
+26 silly rollbackFailedOptional Finishing
+27 silly runTopLevelLifecycles Finishing
+28 silly install printInstalled
+29 verbose stack Error: ENOENT: no such file or directory, open 'c:\wamp\www\api-lessons\laracasts\generators@dev-master'
+29 verbose stack     at Error (native)
+30 verbose cwd c:\wamp\www\api-lessons
+31 error Windows_NT 10.0.14393
+32 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+33 error node v6.9.5
+34 error npm  v3.10.10
+35 error path c:\wamp\www\api-lessons\laracasts\generators@dev-master
+36 error code ENOENT
+37 error errno -4058
+38 error syscall open
+39 error enoent ENOENT: no such file or directory, open 'c:\wamp\www\api-lessons\laracasts\generators@dev-master'
+40 error enoent ENOENT: no such file or directory, open 'c:\wamp\www\api-lessons\laracasts\generators@dev-master'
+40 error enoent This is most likely not a problem with npm itself
+40 error enoent and is related to npm not being able to find a file.
+41 verbose exit [ -4058, true ]
