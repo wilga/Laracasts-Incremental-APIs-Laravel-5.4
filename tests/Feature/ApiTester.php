@@ -4,15 +4,15 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Faker\Factory as Faker;
+use BadMethodCallException;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 
-class ApiTester extends TestCase
+abstract class ApiTester extends TestCase
 {
-
 	protected $fake;
-	protected $times = 1;
 
 	function __construct()
 	{
@@ -20,11 +20,21 @@ class ApiTester extends TestCase
 
 	}
 
-    protected function times($count)
-    {
-        $this->times = $count;
+	public function setUp()
+	{
+		parent::setUp();
 
-        return $this;
+		Artisan::call('migrate');
+	}
+
+	public function getJson($uri, $method = 'GET', $parameters = [])
+	{
+		return $this->call($method, $uri, $parameters);
+	}
+
+	protected function getStub()
+    {
+    	throw new BadMethodCallException('Create your own getStub method to declare your fields.');
     }
 
 }

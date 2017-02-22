@@ -32,7 +32,7 @@ class LessonController extends ApiController {
 
     	if ( ! $lesson ) {
 
-    		return $this->respondNotFound('Lesson does not exist.');
+    		return $this->responseNotFound('Lesson does not exist.');
 
 		}
 
@@ -43,7 +43,7 @@ class LessonController extends ApiController {
 
      public function store(Request $request)
      {
-     	if ( ! $request->title or ! $request->body or ! $request->active )
+     	if ( ! $request->title or ! $request->body or ! is_bool($request->active) )
      	{
      		return $this->respondInvalidRequest('Please provide all required fields.');
      	}
