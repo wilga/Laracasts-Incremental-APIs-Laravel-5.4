@@ -18,12 +18,19 @@ class LessonController extends ApiController {
 	}
 
 
-    public function index()
+    public function index(Request $request)
     {
-		$lessons = Lesson::all();
-    	return $this->respond([
-    		'data' => $this->lessonTransformer->transformCollection($lessons->all())
-		]);
+
+
+        $limit = $request->input('limit') ?: 3;
+
+		$lessons = Lesson::paginate($limit);
+        // dd(get_class_methods($lessons));
+
+    	return $this->respondWithPagination($lessons, [
+            $this->lessonTransformer->transformCollection($lessons->all())
+        ]);
+
     }
 
     public function show($id)
@@ -60,5 +67,4 @@ class LessonController extends ApiController {
 
      	return $this->setStatusCode(201)->respondWithMessage();
      }
-
 }
